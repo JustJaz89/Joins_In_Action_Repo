@@ -30,11 +30,13 @@ SELECT * FROM movies INNER JOIN users on movie_id = favorite_movie_id;
 -- Determine which lead studio's movies are favorited by users the most.
 -- EXPECTED RESULT: Disney
 
+-- SELECT lead_studio FROM movies LEFT JOIN users on movie_id = favorite_movie_id ORDER BY lead_studio ASC LIMIT 1;
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 5 >>>>>>>>>>>>>>>>>>>>>>>
 -- Get the average Rotten Tomatoes score of all movies that are favorited by a user.
 -- EXPECTED RESULT: 52.21
 
+SELECT AVG(rotten_tomatoes) FROM movies INNER JOIN users on movie_id = favorite_movie_id;
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 6 >>>>>>>>>>>>>>>>>>>>>>>
 -- Determine which two movies are have duplicate entries in the dataset. (HINT: No join is needed for this problem)

@@ -40,3 +40,4 @@ SELECT * FROM movies RIGHT JOIN users on movie_id = favorite_movie_id;
 -- EXPECTED RESULT: Mamma Mia!, Gnomeo and Juliet
 -- It is important to be able to identify dirty data within a dataset!
 
+

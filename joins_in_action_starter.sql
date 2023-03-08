@@ -30,7 +30,7 @@ SELECT * FROM movies INNER JOIN users on movie_id = favorite_movie_id;
 -- Determine which lead studio's movies are favorited by users the most.
 -- EXPECTED RESULT: Disney
 
--- SELECT lead_studio FROM movies LEFT JOIN users on movie_id = favorite_movie_id ORDER BY lead_studio ASC LIMIT 1;
+-- SELECT DISTINCT lead_studio FROM movies LEFT JOIN users on movie_id = favorite_movie_id ORDER BY lead_studio;
 
 -- <<<<<<<<<<<<<<<<<<<<<< PROBLEM 5 >>>>>>>>>>>>>>>>>>>>>>>
 -- Get the average Rotten Tomatoes score of all movies that are favorited by a user.
@@ -43,4 +43,4 @@ SELECT AVG(rotten_tomatoes) FROM movies INNER JOIN users on movie_id = favorite_
 -- EXPECTED RESULT: Mamma Mia!, Gnomeo and Juliet
 -- It is important to be able to identify dirty data within a dataset!
 
-
+SELECT film FROM movies GROUP BY film HAVING COUNT(film) > 1;
